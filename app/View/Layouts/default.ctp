@@ -30,7 +30,6 @@
 	echo $this->Html->css('sky-forms/custom-sky-forms');
 	echo $this->Html->css('dropzone');
 
-	echo $this->Html->css('themes/default');
 	echo $this->Html->css('flatty');
 
 	echo $this->Html->css('custom');

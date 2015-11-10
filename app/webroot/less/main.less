@@ -3,12 +3,41 @@
 	background: #fff;
 }
 
-.navbar-brand
-	padding: 0 15px;
-	>img {
-		display: inline-block;
+
+//Navbar
+	nav {
+		margin: 0;
+		border: 0 !important;
+		.navbar-brand {
+			padding: 0 15px;;
+			&>img {
+				display: inline-block;
+			}
+		}
+		.nav {
+			&>li {
+				font-weight: bold;
+				padding: 0;
+				border-bottom: 2px solid transparent;
+				&:hover {border-bottom: 2px solid #72c02c;}
+				&>a:hover {color: #72c02c !important;}
+			}
+			ul {
+				border: 0;
+				padding: 0;
+			}
+		}
+		.dropdown-menu>li>a {
+			padding: 5px 20px;
+			border-right: 3px solid transparent;
+			&:hover {
+				border-right: 3px solid #72c02c;
+			}
+		}
+		.open>a {
+			color: #72c02c !important;
+		}
 	}
-}
 
 /* Header Fixed
 ------------------------------------
@@ -20,3 +49,42 @@
 		left: 0;
 		right: 0;
 	}*/
+
+// Accueil
+.magazine-news {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	h3 {
+		margin: 0;
+	}
+	.by-author {
+		color: #777;
+		margin-bottom: 8px;
+		strong {
+			color: #72c02c;
+		}
+	}
+	.magazine-news-img {
+		overflow: hidden;
+		max-height: 150px;
+		position: relative;
+	}
+	.magazine-badge {
+		position: absolute;
+    top: 120px;
+    right: 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #fff;
+	}
+	.magazine-links {
+		position: absolute;
+		right: 15px;
+		bottom: 5px;
+		a:hover {
+			color: #fff;
+			background-color: #72c02c;
+		}
+	}
+}

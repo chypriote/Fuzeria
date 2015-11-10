@@ -38,35 +38,50 @@
 }
 
 /*Magazine News*/
-.magazine-news {
-	margin-bottom: 20px;
-}
 
-.magazine-news h3 {
-	margin: 15px 0 10px;
-}
+	.magazine-news-img {
+		overflow: hidden;
+		max-height: 150px;
+		position: relative;
+	}
 
-.magazine-news .by-author strong {
-	color: #72c02c;
-}
+	.magazine-badge {
+		position: absolute;
+    top: 120px;
+    right: 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #fff;
+	}
+	.magazine-news {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 10px;
+		padding-bottom: 5px;
+	}
+	.magazine-news h3 {
+		margin: 0;
+	}
+	.magazine-news .by-author {
+		color: #777;
+		margin-bottom: 8px;
+	}
+	.magazine-news .by-author strong {
+		color: #72c02c;
+	}
+	.magazine-news .magazine-links {
+		position: absolute;
+    right: 15px;
+    bottom: 5px;
+	}
+	.magazine-news .magazine-links a:hover {
+		color: #fff;
+		background: #72c02c;
+	}
 
-.magazine-news .by-author span {
-	color: #777;
-}
+	.magazine-news a.read-more {
+		color: #72c02c;
+	}
 
-.magazine-news a.read-more {
-	color: #72c02c;
-}
-
-.magazine-news .by-author {
-	margin-bottom: 8px;
-}
-
-.magazine-news-img {
-	overflow: hidden;
-	max-height: 150px;
-	position: relative;
-}
 
 /*Magazine Mini News*/
 .magazine-mini-news .post-author {
