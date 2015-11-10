@@ -18,6 +18,7 @@
 	echo $this->Html->meta('favicon.png', $logo_url, array('type' => 'icon'));
 
 	echo $this->Html->css('style');
+	echo $this->Html->css('app');
 	echo $this->Html->css('404');
 	echo $this->Html->css('blog');
 	echo $this->Html->css('profile');
@@ -29,12 +30,18 @@
 	echo $this->Html->css('parallax-slider/parallax-slider');
 	echo $this->Html->css('sky-forms/custom-sky-forms');
 	echo $this->Html->css('dropzone');
+	echo $this->Html->css('plugins.css');
+	echo $this->Html->css('ie8.css');
+	echo $this->Html->css('plugins/animate.css');
+	echo $this->Html->css('plugins/box-shadows.css');
 
 	echo $this->Html->css('flatty');
 
 	echo $this->Html->css('custom');
 
   echo $this->Html->css('newstyle');
+	echo $this->Html->css('main');
+
 	?>
 </head>	
 <?php //TODO background pour localhost ?>

@@ -19,6 +19,9 @@
 		margin: 0;
 		border: 0 !important;
 	}
+	.navbar {
+		margin-bottom: 0;
+	}
 	.navbar-brand {
 		padding: 0 15px;;
 	}
@@ -110,3 +113,83 @@
 		#widget-server .progress-bar {
 			background-color: #72c02c;
 		}
+
+/* Carousel */
+	.carousel {
+		margin-bottom: 40px;
+	}
+	.carousel h3 {
+		margin: 0;
+		font-weight: bold;
+	}
+	.img-slider {
+		width: 100%;
+		max-height: 450px;
+		min-height: 450px;
+	}
+
+/* Blog */
+	/* Index display news */
+		.magazine-news-img {
+			overflow: hidden;
+			max-height: 150px;
+			position: relative;
+		}
+
+		.magazine-badge {
+			position: absolute;
+	    top: 120px;
+	    right: 0;
+	    padding: 5px 10px;
+	    font-weight: bold;
+	    color: #fff;
+	    background-color: #72c02c;
+		}
+		.magazine-news {
+			border-bottom: 1px solid #eee;
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+		}
+		.magazine-news h3 {
+			margin: 0;
+		}
+		.magazine-news .by-author {
+			color: #777;
+			margin-bottom: 8px;
+		}
+		.magazine-news .by-author strong {
+			color: #72c02c;
+		}
+		.magazine-news .magazine-links {
+			position: absolute;
+	    right: 15px;
+	    bottom: 7px;
+		}
+		.magazine-news .magazine-links a:hover {
+			color: #fff;
+			background: #72c02c;
+		}
+
+		.magazine-news a.read-more {
+			color: #72c02c;
+		}
+
+/*Copyright*/
+	.copyright {
+		font-size: 12px;
+		padding: 20px 0;
+		background: #3e4753;
+	}
+
+	.copyright p {
+		color: #dadada;
+		margin: 0;
+	}
+
+	.copyright a {
+		color: #72c02c;
+	}
+	.copyright a:hover {
+		color: #a8f85f;
+		text-decoration: none;
+	}

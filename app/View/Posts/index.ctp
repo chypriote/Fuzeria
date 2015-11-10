@@ -57,7 +57,7 @@
     						echo '<a href="'.$this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])).'"><img class="img-responsive" src="'.$this->webroot.'img/posts/'.$articles[$a]['Post']['img'].'" alt=""></a>';
     					}
   					?>
-  					<span class="magazine-badge label-green"><?php echo $articles[$a]['Post']['cat']; ?></span>
+  					<span class="magazine-badge"><?php echo $articles[$a]['Post']['cat']; ?></span>
           </div>
           <h3>
             <?php
@@ -105,19 +105,17 @@
 		<?php } ?>
     <?php if ($a == 1 || $a == 3 || $a == 5) { ?></div><?php } ?>
 	<?php } ?>
-  
-	<footer class="pagination text-center">
-		<ul class="pagination">
-			<?php
-			if($nb_posts > 5){
-				echo '<li>'.$this->Paginator->prev(__('«'), array('tag' => 'li'), null, array('tag' => 'li', 'class' => 'disabled', 'disabledTag' => 'a')).'</li>';
-				echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'currentClass' => 'active', 'tag' => 'li', 'first' => 'Première', 'last' => 'Dernière', 'ellipsis' => ''));
-				echo '<li>'.$this->Paginator->next(__('»'), array('tag' => 'li'), null, array('tag' => 'li', 'class' => 'disabled', 'disabledTag' => 'a')).'</li>';
-				echo '<br><br>';
-			}
-			?>
-		</ul>															
-	</footer>
+  <?php  if($nb_posts > 6){ ?>
+  	<footer class="pagination text-center">
+  		<ul class="pagination">
+  			<?php				echo '<li>'.$this->Paginator->prev(__('«'), array('tag' => 'li'), null, array('tag' => 'li', 'class' => 'disabled', 'disabledTag' => 'a')).'</li>';
+  				echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'currentClass' => 'active', 'tag' => 'li', 'first' => 'Première', 'last' => 'Dernière', 'ellipsis' => ''));
+  				echo '<li>'.$this->Paginator->next(__('»'), array('tag' => 'li'), null, array('tag' => 'li', 'class' => 'disabled', 'disabledTag' => 'a')).'</li>';
+  				echo '<br><br>';
+        ?>
+  		</ul>															
+  	</footer>
+  <?php } ?>
 </section>
 <?php echo $this->element('sidebar'); ?> 
 <script>
