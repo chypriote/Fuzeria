@@ -1,0 +1,24 @@
+/*Boxed Layout
+------------------------------------*/
+#wrapper {
+  background: #fff;
+}
+
+.boxed-layout {
+  padding: 0;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+nav {
+	margin: 0;
+}
+.navbar-brand {
+	padding: 0 15px;;
+}
+.navbar-brand > img {
+	display: inline-block;
+}
