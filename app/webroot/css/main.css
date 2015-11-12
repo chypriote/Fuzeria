@@ -66,7 +66,7 @@ nav.navbar {
 }
 nav .navbar-brand {
   padding: 0 15px;
-  font-size: 1.8em;
+  font-size: 1.7em;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -86,7 +86,7 @@ nav .nav > li > a:hover {
   color: #40005d !important;
 }
 nav .nav > li > a {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 nav .nav ul {
   border: 0;
@@ -228,6 +228,23 @@ nav .open > a {
   font-size: 180px;
   line-height: 200px;
   padding-bottom: 20px;
+}
+.info-block {
+  background: transparent;
+  margin-top: 50px;
+  border: none;
+  color: #fff;
+  padding: 20px 30px;
+  text-align: center;
+}
+.info-block i.fa-info-circle {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+  border: solid 1px #eee;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 .servive-block-v2 .servive-block-in {
   padding: 20px 30px;

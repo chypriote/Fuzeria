@@ -1,22 +1,13 @@
 {% set title %}Réglement du serveur {{ name_server }}{% endset %}
 {% do _this.assign('title', title) %}
-<!--=== Content Part ===-->
-<div class="container content">
-    <div class="row magazine-page">
-        <!-- Begin Content -->
-        <div class="col-md-9">
-	        {% if rules is not empty %}
-				{{ rules }}
-	       	{% else %}
-				<div class="servive-block servive-block-default">
-	                <i class="icon-custom icon-color-dark rounded-x fa fa-info-circle"></i>
-	                <h2 class="heading-md">Aucun résultat</h2>
-	                <p>Le réglement n'a pas encore été rédigé</p>                        
-	            </div>
-	       	{% endif %}
-        </div>
-        <!-- End Content -->
-        {{ _this.element('sidebar') }}
-    </div>
-</div><!--/container-->     
-<!-- End Content Part -->
+<main class="col-md-9">
+  {% if rules is not empty %}
+		{{ rules }}
+	{% else %}
+		<section class="info-block">
+			<i class="fa fa-3x fa-info-circle"></i>
+			<h2>Le réglement n'a pas encore été rédigé</h2>         
+		</section>
+	 	{% endif %}
+</main>
+{{ _this.element('sidebar') }}
