@@ -559,3 +559,56 @@ nav .open > a {
 #register .register-form {
   display: block;
 }
+#main-vote thead {
+  text-align: center;
+  font-size: 1.5em;
+  color: #62007F;
+  font-weight: bold;
+}
+#main-vote td {
+  vertical-align: middle;
+  text-align: center;
+}
+#main-vote td img {
+  margin: auto;
+}
+#main-vote .position {
+  font-size: 1.2em;
+}
+#main-vote .user {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#main-vote .user .text-muted {
+  display: block;
+  font-size: 0.8em;
+}
+#main-vote .user b {
+  color: #FFD800;
+}
+#main-vote .vertical-separator {
+  content: "";
+  display: inline;
+  position: absolute;
+  height: 90%;
+  border-left: 1px dotted #eeeeee;
+  left: 34%;
+}
+#main-vote .info-block {
+  margin: 10px 0 20px;
+  border-bottom: 1px dotted #eeeeee;
+}
+#main-vote .info-block i {
+  position: relative;
+}
+#main-vote .info-block i .stacker {
+  color: #000;
+  font-weight: bold;
+  position: absolute;
+  left: 1px;
+  right: 0;
+  top: 0;
+}
+#main-vote .vote-call {
+  text-align: center;
+}

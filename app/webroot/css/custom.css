@@ -351,15 +351,6 @@ td.votes-no-align {
 label {
   font-weight: 100; 
 }
-.vertical-separator {
-  content: "";
-  display: inline;
-  position: absolute;
-  width: 0px;
-  height: 90%;
-  border-left: 1px dotted #ccc;
-  padding: 0;
-}
 .open-sans {
   font-family: 'Open Sans', sans-serif;
 }
