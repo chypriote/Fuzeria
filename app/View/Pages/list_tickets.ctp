@@ -8,45 +8,45 @@
   		<?php foreach($data as $d){ ?>
   			<li class="clearfix">
   				<time class="col-md-3" datetime>
-            <span><?php echo $this->Time->format('d/m/Y', $d['Support']['created']); ?></span>
-            <span><?php echo $this->Time->format('H\hi', $d['Support']['created']); ?></span>
+            <span class="date"><?php echo $this->Time->format('d/m/Y', $d['Support']['created']); ?></span>
+            <span class="time"><?php echo $this->Time->format('H\hi', $d['Support']['created']); ?></span>
           </time>
   				<i class="icon rounded-x hidden-xs"></i>
   				<article class="col-md-9">
-  					<h2>
+  					<header>
   						<?php
-  						switch($d['Support']['priority']){
-  							case '1':
-  								echo '<small><span class="text-highlights text-highlights-green">Priorité basse</span></small>';
-  								break;
-  							case '2':
-  								echo '<small><span class="text-highlights text-highlights-blue">Priorité moyenne</span></small>';
-  								break;
-  							case '3':
-  								echo '<small><span class="text-highlights text-highlights-orange">Priorité haute</span></small>';
-  								break;
-  							case '4':
-  								echo '<small><span class="text-highlights text-highlights-red">Priorité très haute</span></small>';
-  								break;
-  						}
+    						switch($d['Support']['priority']){
+    							case '1':
+    								echo '<small><span class="text-highlights text-highlights-green">Priorité basse</span></small>';
+    								break;
+    							case '2':
+    								echo '<small><span class="text-highlights text-highlights-blue">Priorité moyenne</span></small>';
+    								break;
+    							case '3':
+    								echo '<small><span class="text-highlights text-highlights-orange">Priorité haute</span></small>';
+    								break;
+    							case '4':
+    								echo '<small><span class="text-highlights text-highlights-red">Priorité très haute</span></small>';
+    								break;
+    						}
   						?>
   						<a href="<?php echo $this->Html->url(['controller' => 'pages', 'action' => 'view_ticket', 'id' => $d['Support']['id']]); ?>" class="btn btn-default btn-sm pull-right">
   							<i class="fa fa-list"></i>Consulter les réponses
   						</a>
   						<?php if($d['Support']['resolved'] == 0){ ?>
-  						<small>
-  							<span class="text-highlights text-highlights-green">
-  								<i class="fa fa-clock-o"></i>Ticket ouvert
-  							</span>
-  						</small>
+    						<small>
+    							<span class="text-highlights text-highlights-green">
+    								<i class="fa fa-clock-o"></i>Ticket ouvert
+    							</span>
+    						</small>
   						<?php } else { ?>
-  						<small>
-  							<span class="text-highlights text-highlights-red">
-  								<i class="fa fa-lock"></i>Ticket fermé
-  							</span>
-  						</small>
+    						<small>
+    							<span class="text-highlights text-highlights-red">
+    								<i class="fa fa-lock"></i>Ticket fermé
+    							</span>
+    						</small>
   						<?php } ?>
-  					</h2>
+  					</header>
   					<p>
   						<?php
   						$content = strip_tags($d['Support']['message']);
@@ -58,7 +58,7 @@
   						}
   						?>
   					</p>
-  				</div>
+  				</article>
   			</li>
   		<?php } ?>
   	</ul>
