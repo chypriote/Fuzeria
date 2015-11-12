@@ -51,9 +51,6 @@
 	.dropdown-menu>li>a:hover {
 		border-right: 3px solid #72c02c;
 	}
-	.nav .open>a {
-		color: #72c02c !important;
-	}
 
 /* Sidebar */
 	#sidebar {padding-top:20px;}
@@ -161,11 +158,6 @@
 		}
 		.magazine-news .by-author strong {
 			color: #72c02c;
-		}
-		.magazine-news .magazine-links {
-			position: absolute;
-	    right: 15px;
-	    bottom: 7px;
 		}
 		.magazine-news .magazine-links a:hover {
 			color: #fff;

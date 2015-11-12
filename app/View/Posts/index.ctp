@@ -66,6 +66,22 @@
                   echo '<a href="'.$this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])).'">'.$articles[$a]['Post']['title'].'</a>';
                 }
               ?>
+              <div class="magazine-links">
+                <?php if($use_posts_views){ ?>
+                  <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
+                    <i class="fa fa-eye"></i> <?php echo count($articles[$a]['postView']); ?>
+                  </a>
+                <?php } ?>
+                <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
+                  <i class="fa fa-heart"></i> <?php echo count($articles[$a]['Like']); ?>
+                </a>
+                <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
+                  <i class="fa fa-comments"></i> <?php echo count($articles[$a]['Comment']); ?>
+                </a>
+                <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
+                  <i class="fa fa-paper-plane"></i> Lire
+                </a>
+              </div>
             </h3>
             <div class="by-author">
               Par <strong><?php echo $articles[$a]['Post']['author']; ?></strong> <small>le <?php echo $this->Time->format('d/m/Y à H:i', $articles[$a]['Post']['posted']); ?></small>
@@ -83,22 +99,6 @@
                 }
               ?>
             </p>
-            <div class="magazine-links">
-              <?php if($use_posts_views){ ?>
-                <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
-                  <i class="fa fa-eye"></i> <?php echo count($articles[$a]['postView']); ?>
-                </a>
-              <?php } ?>
-              <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
-                <i class="fa fa-heart"></i> <?php echo count($articles[$a]['Like']); ?>
-              </a>
-              <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
-                <i class="fa fa-comments"></i> <?php echo count($articles[$a]['Comment']); ?>
-              </a>
-              <a class="btn btn-default btn-xs" href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'read', 'slug' => $articles[$a]['Post']['slug'], 'id' => $articles[$a]['Post']['id'])); ?>">
-                <i class="fa fa-paper-plane"></i> Lire
-              </a>
-            </div>
           </section>
   			</article>
   		<?php } ?>
