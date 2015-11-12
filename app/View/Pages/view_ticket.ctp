@@ -1,7 +1,7 @@
 <?php $this->assign('title', 'Mes tickets'); ?>
 <main id="view-support" class="col-md-9">
   <header>
-    <h1>Vos tickets envoyés au support</h1>
+    <h1>Consulter un ticket</h1>
   </header>
   <ul class="timeline">
     <li class="clearfix">
@@ -11,7 +11,7 @@
       </time>
       <i class="icon rounded-x hidden-xs"></i>
       <article class="col-md-8">
-        <h2>
+        <header>
           <?php if($role > 0){ ?>
             <?php if($data['User']['username'] == null){
                 echo 'Ticket de <u>Compte supprimé</u>';
@@ -40,14 +40,14 @@
               </a>
             <?php } ?>
           <?php } ?>
-        </h2>
+        </header>
         <p>
           <?php echo $data['Support']['message']; ?>
         </p>
       </article>
     </li>
     <?php if($nbComments != 0){ ?>
-      <?php foreach($comments as $comment){ ?>
+      <?php foreach(array_reverse($comments) as $comment){ ?>
       <li class="clearfix">
         <time class="col-md-3" datetime>
           <span class="date"><?php echo $this->Time->format('d/m/Y', $comment['supportComments']['created']); ?></span>
@@ -55,14 +55,16 @@
         </time>
         <i class="icon rounded-x hidden-xs"></i>
         <article class="col-md-8">
-          <h2>
+          <header>
             <?php if($comment['User']['username'] == null){
               echo 'Réponse de <u>Compte supprimé</u>';
               } else{
               echo 'Réponse de '.$comment['User']['username'];
               } ?>
-            <a href="<?php echo $this->Html->url(['controller' => 'pages', 'action' => 'delete_support_comment', 'id' => $comment['supportComments']['id']]); ?>" class="tooltips btn btn-default btn-sm pull-right confirm" data-toggle="tooltip" data-placement="left" title="" data-original-title="Supprimer cette réponse"><font color="red"><i class="fa fa-times"></i> Supprimer</font></a>
-          </h2>
+            <?php if($role > 0){ ?>
+              <a href="<?php echo $this->Html->url(['controller' => 'pages', 'action' => 'delete_support_comment', 'id' => $comment['supportComments']['id']]); ?>" class="tooltips btn btn-default btn-sm pull-right confirm" data-toggle="tooltip" data-placement="left" title="" data-original-title="Supprimer cette réponse"><font color="red"><i class="fa fa-times"></i> Supprimer</font></a>
+            <?php } ?>  
+          </header>
           <p class="text-justify">
             <?php echo $comment['supportComments']['message']; ?>
           </p>
@@ -74,10 +76,8 @@
         <li class="clearfix">
           <time class="col-md-3" datetime></time>
           <i class="icon rounded-x hidden-xs"></i>
-          <article class="col-md-8">
-            <h3>
-              <small>Aucune réponse pour le moment</small>
-            </h3>
+          <article class="col-md-8 no-answer">
+            <p>Aucune réponse pour le moment</p>
           </article>
         </li>
       <?php } ?>

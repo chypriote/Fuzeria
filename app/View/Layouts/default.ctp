@@ -36,7 +36,6 @@
 
 	echo $this->Html->css('custom');
 
-  echo $this->Html->css('newstyle');
 	echo $this->Html->css('main');
 
 	?>

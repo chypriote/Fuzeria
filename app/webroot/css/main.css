@@ -7,6 +7,7 @@ body {
   background: #000;
   min-height: 100%;
   position: relative;
+  padding-bottom: 60px;
 }
 .boxed-layout {
   padding: 0;
@@ -30,7 +31,8 @@ a {
   color: #62007F;
 }
 a:hover {
-  color: #40005d;
+  color: #B200FF;
+  text-decoration: none;
 }
 .btn-u {
   background: #62007F;
@@ -119,7 +121,7 @@ nav .open > a {
   color: #62007F;
 }
 .copyright a:hover {
-  color: #9533b2;
+  color: #B200FF;
   text-decoration: none;
 }
 .carousel {
@@ -258,7 +260,6 @@ nav .open > a {
   color: #62007F;
 }
 #blog .blog-post {
-  padding-top: 20px;
   border-bottom: 1px solid #eeeeee;
 }
 #blog .blog-post img {
@@ -361,6 +362,7 @@ nav .open > a {
 }
 #view-support .timeline > li {
   position: relative;
+  margin-bottom: 40px;
 }
 #view-support .timeline > li time {
   text-align: center;
@@ -391,8 +393,25 @@ nav .open > a {
   background: #f3f3f3;
   border-radius: 5px;
 }
-#view-support .timeline > li article h2 {
+#view-support .timeline > li article header {
   border-bottom: 1px solid #ddd;
+  font-size: 1.4em;
+  padding-bottom: 5px;
+  color: #777;
+}
+#view-support .timeline > li article header a:not(.btn) {
+  color: #777;
+}
+#view-support .timeline > li article header a:not(.btn):hover {
+  color: #000;
+}
+#view-support .timeline > li article header i.fa-lock {
+  margin-right: 3px;
+}
+#view-support .timeline > li article p {
+  padding: 10px 5px;
+  color: #777;
+  margin: 0;
 }
 #view-support .timeline > li article.repondre {
   padding-bottom: 10px;
