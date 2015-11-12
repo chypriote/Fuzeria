@@ -379,6 +379,10 @@ nav .open > a {
   padding-bottom: 5px;
   border-bottom: 1px solid #eeeeee;
 }
+#add-support header u {
+  text-decoration: none;
+  color: #62007F;
+}
 #add-support fieldset {
   margin-bottom: 10px;
 }
@@ -389,6 +393,14 @@ nav .open > a {
 #view-support header {
   margin: 5px 0 10px;
   border-bottom: 1px solid #eeeeee;
+}
+#view-ticket header span.text-highlights,
+#view-support header span.text-highlights {
+  padding: 3px 5px;
+}
+#view-ticket header span.text-highlights i,
+#view-support header span.text-highlights i {
+  margin-right: 3px;
 }
 #view-ticket .timeline,
 #view-support .timeline {
@@ -420,7 +432,7 @@ nav .open > a {
 }
 #view-ticket .timeline > li time .date,
 #view-support .timeline > li time .date {
-  font-size: 1.7em;
+  font-size: 1.6em;
   display: block;
 }
 #view-ticket .timeline > li time .time,

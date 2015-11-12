@@ -1,4 +1,4 @@
-@main-color: #62007F; //72c02c B200FF
+@main-color: #62007F; //72c02c B200FF 62007F
 @link-hover: #B200FF;
 
 @bg-page: #000;
@@ -360,6 +360,10 @@ html, body {
 			margin: 5px 0 10px;
 			padding-bottom: 5px;
 			border-bottom: 1px solid @border-color;
+			u {
+				text-decoration: none;
+				color: @main-color;
+			}
 		}
 		fieldset {
 			margin-bottom: 10px;
@@ -374,6 +378,10 @@ html, body {
 		header {
 			margin: 5px 0 10px;
 			border-bottom: 1px solid @border-color;
+			span.text-highlights {
+				padding:3px 5px;
+				i {margin-right: 3px; }
+			}
 		}
 		.timeline {
 			padding: 0;
@@ -397,7 +405,7 @@ html, body {
 					padding: 0 30px 0 0;
 					font-weight: bold;
 					.date {
-						font-size: 1.7em;
+						font-size: 1.6em;
 						display: block;
 					}
 					.time {

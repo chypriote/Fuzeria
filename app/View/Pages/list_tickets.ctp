@@ -17,16 +17,16 @@
   						<?php
     						switch($d['Support']['priority']){
     							case '1':
-    								echo '<small><span class="text-highlights text-highlights-green">Priorité basse</span></small>';
+    								echo '<span class="text-highlights text-highlights-green">Priorité basse</span>';
     								break;
     							case '2':
-    								echo '<small><span class="text-highlights text-highlights-blue">Priorité moyenne</span></small>';
+    								echo '<span class="text-highlights text-highlights-blue">Priorité moyenne</span>';
     								break;
     							case '3':
-    								echo '<small><span class="text-highlights text-highlights-orange">Priorité haute</span></small>';
+    								echo '<span class="text-highlights text-highlights-orange">Priorité haute</span>';
     								break;
     							case '4':
-    								echo '<small><span class="text-highlights text-highlights-red">Priorité très haute</span></small>';
+    								echo '<span class="text-highlights text-highlights-red">Priorité très haute</span>';
     								break;
     						}
   						?>
@@ -34,17 +34,9 @@
   							<i class="fa fa-list"></i>Consulter les réponses
   						</a>
   						<?php if($d['Support']['resolved'] == 0){ ?>
-    						<small>
-    							<span class="text-highlights text-highlights-green">
-    								<i class="fa fa-clock-o"></i>Ticket ouvert
-    							</span>
-    						</small>
+    						<span class="text-highlights text-highlights-green"><i class="fa fa-clock-o"></i>Ticket ouvert</span>
   						<?php } else { ?>
-    						<small>
-    							<span class="text-highlights text-highlights-red">
-    								<i class="fa fa-lock"></i>Ticket fermé
-    							</span>
-    						</small>
+    						<span class="text-highlights text-highlights-red"><i class="fa fa-lock"></i>Ticket fermé</span>
   						<?php } ?>
   					</header>
   					<p>
