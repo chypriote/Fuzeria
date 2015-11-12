@@ -500,51 +500,78 @@ html, body {
 		.register-form {display: block;}
 	}
 
-//Vote ladder
-#main-vote {
-	thead {
-		text-align: center;
-		font-size: 1.5em;
-		color: @main-color;
-		font-weight: bold;
-	}
-	td {
-		vertical-align: middle;
-		text-align: center;
-		img {margin: auto;}
-	}
-	.position {
-		font-size: 1.2em;
-	}
-	.user {
-		font-size: 1.2em;
-		font-weight: bold;
-		.text-muted {display: block;font-size: 0.8em;}
-		b {color: @sidebar-header;}
-	}
-	.vertical-separator {
-		content: "";
-    display: inline;
-    position: absolute;
-    height: 90%;
-    border-left: 1px dotted @border-color;
-    left: 34%;
-	}
-	.info-block {
-		margin: 10px 0 20px;
-		border-bottom: 1px dotted @border-color;
-		i {position: relative;
-			.stacker {
-				color: #000;
-				font-weight: bold;
-				position: absolute;
-				left: 1px;
-				right: 0;
-				top: 0;
+//Vote call
+	#main-vote {
+		thead {
+			text-align: center;
+			font-size: 1.5em;
+			color: @main-color;
+			font-weight: bold;
+		}
+		td {
+			vertical-align: middle;
+			text-align: center;
+			img {margin: auto;}
+		}
+		.position {
+			font-size: 1.2em;
+		}
+		.user {
+			font-size: 1.2em;
+			font-weight: bold;
+			.text-muted {display: block;font-size: 0.8em;}
+			b {color: @sidebar-header;}
+		}
+		.vertical-separator {
+			content: "";
+	    display: inline;
+	    position: absolute;
+	    height: 90%;
+	    border-left: 1px dotted @border-color;
+	    left: 34%;
+		}
+		.info-block {
+			margin: 10px 0 20px;
+			border-bottom: 1px dotted @border-color;
+			i {position: relative;
+				.stacker {
+					color: #000;
+					font-weight: bold;
+					position: absolute;
+					left: 1px;
+					right: 0;
+					top: 0;
+				}
 			}
 		}
+		.vote-call {
+			text-align: center;
+		}
 	}
-	.vote-call {
-		text-align: center;
+
+//Vote
+	#vote-ladder {
+		table {
+			margin-top: 25px;
+			text-align: center;
+			img{margin:auto;}
+			thead {
+				font-size: 1.6em;
+				font-weight: bold;
+			}
+			.first {font-size: 1.8em;
+				i{color:#f9ce61;}
+			}
+			.second {font-size: 1.5em;
+				i{color:#d7edf7;}
+			}
+			.third {font-size: 1.3em;
+				i{color:#fc9862;}
+			}
+			.ladder-rank {width: 10%;}
+			.ladder-score {width: 10%;}
+			td:first-child {border-right: 1px dotted @border-color;}
+			td:last-child {border-left: 1px dotted @border-color;}
+			.ladder-name {text-align: left;}
+		}
 	}
-}

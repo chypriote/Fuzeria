@@ -612,3 +612,47 @@ nav .open > a {
 #main-vote .vote-call {
   text-align: center;
 }
+#vote-ladder table {
+  margin-top: 25px;
+  text-align: center;
+}
+#vote-ladder table img {
+  margin: auto;
+}
+#vote-ladder table thead {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+#vote-ladder table .first {
+  font-size: 1.8em;
+}
+#vote-ladder table .first i {
+  color: #f9ce61;
+}
+#vote-ladder table .second {
+  font-size: 1.5em;
+}
+#vote-ladder table .second i {
+  color: #d7edf7;
+}
+#vote-ladder table .third {
+  font-size: 1.3em;
+}
+#vote-ladder table .third i {
+  color: #fc9862;
+}
+#vote-ladder table .ladder-rank {
+  width: 10%;
+}
+#vote-ladder table .ladder-score {
+  width: 10%;
+}
+#vote-ladder table td:first-child {
+  border-right: 1px dotted #eeeeee;
+}
+#vote-ladder table td:last-child {
+  border-left: 1px dotted #eeeeee;
+}
+#vote-ladder table .ladder-name {
+  text-align: left;
+}
