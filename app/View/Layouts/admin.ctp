@@ -9,7 +9,7 @@
         <title><?php echo $this->fetch('title'); ?></title>
         <?php echo $this->Html->meta('favicon.png', $logo_url, array('type' => 'icon')); ?>
         <?php echo $this->Html->css('admin/bootstrap.min'); ?>
-        <?php echo $this->Html->css('/files/font-awesome/css/font-awesome'); ?>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <?php echo $this->Html->css('admin/plugins/toastr/toastr.min'); ?>
         <?php echo $this->Html->css('admin/plugins/gritter/jquery.gritter'); ?>
         <?php echo $this->Html->css('admin/plugins/dataTables/dataTables.bootstrap'); ?>
