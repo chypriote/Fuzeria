@@ -1,5 +1,5 @@
 <?php $this->assign('title', 'Mes tickets'); ?>
-<main id="view-support" class="col-md-9">
+<main id="view-ticket" class="col-md-9">
   <header>
     <h1>Consulter un ticket</h1>
   </header>
@@ -97,13 +97,13 @@
         </article>
       </li>
     <?php } else { ?>
-      <li>
+      <li class="clearfix">
         <time class="col-md-3" datetime></time>
         <i class="icon rounded-x hidden-xs"></i>
         <article class="col-md-8">
-          <h3>
+          <p>
             <i class="fa fa-lock"></i> Ce ticket est fermé
-          </h3>
+          </p>
         </article>
       </li>
     <?php } ?>

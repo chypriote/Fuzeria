@@ -163,6 +163,8 @@ html, body {
 			padding-bottom: 5px;
 			border-bottom: 1px solid @border-color;
 			color: @main-color;
+			font-weight: bold;
+			font-size: 2em;
 		}
 		.input-group {
 			width: 100%;
@@ -198,6 +200,52 @@ html, body {
 		}
 		.progress {margin-bottom: 15px;}
 		.progress-bar {background-color: @main-color;}
+	}
+
+//404
+	.error-v1 {
+		padding-bottom: 30px;
+		text-align: center;	
+		p {
+			color: #555;
+			font-size: 16px;
+		}
+		span {
+			color: #555;
+			display: block;
+			font-size: 35px;
+			font-weight: 200;
+			&.error-v1-title {
+				color: #777;	
+				font-size: 180px;
+				line-height: 200px;
+				padding-bottom: 20px;
+			}
+		}
+	}
+
+//Service block
+	.servive-block-v2 .servive-block-in {
+		padding: 20px 30px;
+		text-align: center;
+		margin-bottom: 15px;
+		background: rgba(255,255,255,0.2);
+		img {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		i {
+			font-size: 40px;
+			color: #fff;
+		}
+		h4 {
+			line-height: 25px;
+			color: #fff;
+		}
+		p {
+			margin-bottom: 20px;
+			color: #fff;
+		}
 	}
 
 
@@ -307,93 +355,93 @@ html, body {
 	}
 
 //Add support
-#add-support {
-	header {
-		margin: 5px 0 10px;
-		padding-bottom: 5px;
-		border-bottom: 1px solid @border-color;
+	#add-support {
+		header {
+			margin: 5px 0 10px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid @border-color;
+		}
+		fieldset {
+			margin-bottom: 10px;
+		}
+		textarea {
+			margin-top: 10px;
+		}
 	}
-	fieldset {
-		margin-bottom: 10px;
-	}
-	textarea {
-		margin-top: 10px;
-	}
-}
 
-//View supports
-#view-support {
-	header {
-		margin: 5px 0 10px;
-		border-bottom: 1px solid @border-color;
-	}
-	.timeline {
-		padding: 0;
-		list-style: none;
-		position: relative;
-		&::before {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 22%;
-			width: 4px;
-			content: '';
-			background: #f3f3f3;
-			margin-left: -14px;
+//View ticket
+	#view-ticket, #view-support {
+		header {
+			margin: 5px 0 10px;
+			border-bottom: 1px solid @border-color;
 		}
-		& > li {
+		.timeline {
+			padding: 0;
+			list-style: none;
 			position: relative;
-			margin-bottom: 40px;
-			time {
-				text-align: center;
-				padding: 0 30px 0 0;
-				font-weight: bold;
-				.date {
-					font-size: 1.7em;
-					display: block;
-				}
-				.time {
-					font-size: 1.3em;
-					color: #888888;
-				}
-			}
-			i.icon {
-				top: 22px;
-				left: 22%;
-				width: 10px;
-				height: 10px;
+			&::before {
 				position: absolute;
-				background-color: #72c02c;
-				margin: 0 0 0 -17px;
-				box-shadow: 0 0 0 4px #f3f3f3;
-				-webkit-font-smoothing: antialiased;
-			}
-			article {
-				padding: 10px 20px;
+				top: 0;
+				bottom: 0;
+				left: 22%;
+				width: 4px;
+				content: '';
 				background: #f3f3f3;
-				border-radius: 5px;
-				header {
-					border-bottom: 1px solid #ddd;
-					font-size: 1.4em;
-					padding-bottom: 5px;
-					color: #777;
-					a:not(.btn) {
-						color: #777;
-						&:hover {color: #000;}
+				margin-left: -14px;
+			}
+			& > li {
+				position: relative;
+				margin-bottom: 40px;
+				time {
+					text-align: center;
+					padding: 0 30px 0 0;
+					font-weight: bold;
+					.date {
+						font-size: 1.7em;
+						display: block;
 					}
-					i.fa-lock {margin-right: 3px;}
+					.time {
+						font-size: 1.3em;
+						color: #888888;
+					}
 				}
-				p {
-					padding: 10px 5px;
-					color: #777;
-					margin: 0;
+				i.icon {
+					top: 22px;
+					left: 22%;
+					width: 10px;
+					height: 10px;
+					position: absolute;
+					background-color: #72c02c;
+					margin: 0 0 0 -17px;
+					box-shadow: 0 0 0 4px #f3f3f3;
+					-webkit-font-smoothing: antialiased;
 				}
-				&.repondre {
-					padding-bottom: 10px;
-					textarea {margin-bottom: 10px;}
+				article {
+					padding: 10px 20px;
+					background: #f3f3f3;
+					border-radius: 5px;
+					header {
+						border-bottom: 1px solid #ddd;
+						font-size: 1.4em;
+						padding-bottom: 5px;
+						color: #777;
+						a:not(.btn) {
+							color: #777;
+							&:hover {color: #000;}
+						}
+						i.fa-lock, i.fa-unlock {margin-right: 3px;}
+					}
+					p {
+						padding: 10px 5px;
+						color: #777;
+						margin: 0;
+					}
+					&.repondre {
+						padding-bottom: 10px;
+						textarea {margin-bottom: 10px;}
+					}
 				}
 			}
 		}
 	}
-}
 

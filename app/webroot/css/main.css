@@ -164,6 +164,8 @@ nav .open > a {
   padding-bottom: 5px;
   border-bottom: 1px solid #eeeeee;
   color: #62007F;
+  font-weight: bold;
+  font-size: 2em;
 }
 #widget-member .input-group {
   width: 100%;
@@ -206,6 +208,48 @@ nav .open > a {
 }
 #widget-server .progress-bar {
   background-color: #62007F;
+}
+.error-v1 {
+  padding-bottom: 30px;
+  text-align: center;
+}
+.error-v1 p {
+  color: #555;
+  font-size: 16px;
+}
+.error-v1 span {
+  color: #555;
+  display: block;
+  font-size: 35px;
+  font-weight: 200;
+}
+.error-v1 span.error-v1-title {
+  color: #777;
+  font-size: 180px;
+  line-height: 200px;
+  padding-bottom: 20px;
+}
+.servive-block-v2 .servive-block-in {
+  padding: 20px 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.servive-block-v2 .servive-block-in img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.servive-block-v2 .servive-block-in i {
+  font-size: 40px;
+  color: #fff;
+}
+.servive-block-v2 .servive-block-in h4 {
+  line-height: 25px;
+  color: #fff;
+}
+.servive-block-v2 .servive-block-in p {
+  margin-bottom: 20px;
+  color: #fff;
 }
 /* Header Fixed
 ------------------------------------
@@ -341,15 +385,18 @@ nav .open > a {
 #add-support textarea {
   margin-top: 10px;
 }
+#view-ticket header,
 #view-support header {
   margin: 5px 0 10px;
   border-bottom: 1px solid #eeeeee;
 }
+#view-ticket .timeline,
 #view-support .timeline {
   padding: 0;
   list-style: none;
   position: relative;
 }
+#view-ticket .timeline::before,
 #view-support .timeline::before {
   position: absolute;
   top: 0;
@@ -360,23 +407,28 @@ nav .open > a {
   background: #f3f3f3;
   margin-left: -14px;
 }
+#view-ticket .timeline > li,
 #view-support .timeline > li {
   position: relative;
   margin-bottom: 40px;
 }
+#view-ticket .timeline > li time,
 #view-support .timeline > li time {
   text-align: center;
   padding: 0 30px 0 0;
   font-weight: bold;
 }
+#view-ticket .timeline > li time .date,
 #view-support .timeline > li time .date {
   font-size: 1.7em;
   display: block;
 }
+#view-ticket .timeline > li time .time,
 #view-support .timeline > li time .time {
   font-size: 1.3em;
   color: #888888;
 }
+#view-ticket .timeline > li i.icon,
 #view-support .timeline > li i.icon {
   top: 22px;
   left: 22%;
@@ -388,34 +440,44 @@ nav .open > a {
   box-shadow: 0 0 0 4px #f3f3f3;
   -webkit-font-smoothing: antialiased;
 }
+#view-ticket .timeline > li article,
 #view-support .timeline > li article {
   padding: 10px 20px;
   background: #f3f3f3;
   border-radius: 5px;
 }
+#view-ticket .timeline > li article header,
 #view-support .timeline > li article header {
   border-bottom: 1px solid #ddd;
   font-size: 1.4em;
   padding-bottom: 5px;
   color: #777;
 }
+#view-ticket .timeline > li article header a:not(.btn),
 #view-support .timeline > li article header a:not(.btn) {
   color: #777;
 }
+#view-ticket .timeline > li article header a:not(.btn):hover,
 #view-support .timeline > li article header a:not(.btn):hover {
   color: #000;
 }
-#view-support .timeline > li article header i.fa-lock {
+#view-ticket .timeline > li article header i.fa-lock,
+#view-support .timeline > li article header i.fa-lock,
+#view-ticket .timeline > li article header i.fa-unlock,
+#view-support .timeline > li article header i.fa-unlock {
   margin-right: 3px;
 }
+#view-ticket .timeline > li article p,
 #view-support .timeline > li article p {
   padding: 10px 5px;
   color: #777;
   margin: 0;
 }
+#view-ticket .timeline > li article.repondre,
 #view-support .timeline > li article.repondre {
   padding-bottom: 10px;
 }
+#view-ticket .timeline > li article.repondre textarea,
 #view-support .timeline > li article.repondre textarea {
   margin-bottom: 10px;
 }
