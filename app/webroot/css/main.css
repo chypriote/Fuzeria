@@ -374,19 +374,23 @@ nav .open > a {
   max-height: 150px;
   position: relative;
 }
-#add-support header {
+#add-support header,
+#contact header {
   margin: 5px 0 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid #eeeeee;
 }
-#add-support header u {
+#add-support header u,
+#contact header u {
   text-decoration: none;
   color: #62007F;
 }
-#add-support fieldset {
+#add-support fieldset,
+#contact fieldset {
   margin-bottom: 10px;
 }
-#add-support textarea {
+#add-support textarea,
+#contact textarea {
   margin-top: 10px;
 }
 #view-ticket header,
