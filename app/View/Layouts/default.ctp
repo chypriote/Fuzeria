@@ -19,10 +19,7 @@
 
 	echo $this->Html->css('style');
 	echo $this->Html->css('app');
-	echo $this->Html->css('404');
-	echo $this->Html->css('blog');
 	echo $this->Html->css('profile');
-	echo $this->Html->css('timeline');
 
 	echo $this->Html->css('line-icons/line-icons');
 	echo $this->Html->css('flexslider/flexslider');
