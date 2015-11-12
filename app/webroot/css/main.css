@@ -11,6 +11,10 @@
 }
 .avatar-rounded {
   border-radius: 3px;
+  border: 1px solid #ffffff;
+}
+body {
+  color: #fff;
 }
 a {
   color: #62007F;
@@ -31,6 +35,14 @@ p,
 li,
 li a {
   color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffffff;
 }
 nav {
   margin: 0;
@@ -136,6 +148,7 @@ nav .open > a {
   margin: 0;
   padding-bottom: 5px;
   border-bottom: 1px solid #eeeeee;
+  color: #62007F;
 }
 #widget-member .input-group {
   width: 100%;
@@ -235,6 +248,9 @@ nav .open > a {
   padding-top: 20px;
   border-bottom: 1px solid #eeeeee;
 }
+#blog .blog-post img {
+  margin: auto;
+}
 #blog .blog-post h1 {
   border-bottom: 1px solid #eeeeee;
   padding: 5px 0;
@@ -299,4 +315,18 @@ nav .open > a {
   overflow: hidden;
   max-height: 150px;
   position: relative;
+}
+#add-support {
+  margin-top: 30px;
+}
+#add-support header {
+  margin: 5px 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eeeeee;
+}
+#add-support fieldset {
+  margin-bottom: 10px;
+}
+#add-support textarea {
+  margin-top: 10px;
 }

@@ -158,6 +158,7 @@
       echo $this->Html->script('jquery.autocomplete');
       echo $this->Html->script('plugins/humane');
       echo $this->Html->script('custom');
+      echo $this->Html->script('main');
     ?>
 	<?php if(!empty($analytics) && $analytics){ ?>
 		<script>
