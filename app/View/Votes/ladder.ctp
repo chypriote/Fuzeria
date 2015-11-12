@@ -11,9 +11,8 @@
 	  </thead>
 	  <tbody>
 		  <?php 
-						$a = 0;
-					for($nb=0;$a < 5 && isset($data[$nb]);$nb++) {
-						switch ($a+1) {
+					for($nb=0;isset($data[$nb]);$nb++) {
+						switch ($nb+1) {
 							case 1:
 								echo '<tr class="first"><td><i class="fa fa-trophy"></i></td>';
 								break;
@@ -24,7 +23,7 @@
 								echo '<tr class="third"><td><i class="fa fa-trophy"></i></td>';
 								break;
 							default:
-								echo '<tr><td>'.($a+1).'<sup>ème</sup></td>';
+								echo '<tr><td>'.($nb+1).'<sup>ème</sup></td>';
 								break;
 						}
 					?>
@@ -36,7 +35,7 @@
 					</td>
 					<td><?php echo $data[$nb]['User']['votes']; ?></td>
 				</tr>
-			<?php $nb--;$a++;} ?>
+			<?php } ?>
 	  </tbody>
 	</table>
 </main>

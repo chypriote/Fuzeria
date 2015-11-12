@@ -16,7 +16,7 @@ class JSONAPI {
 	private $port;
 	private $username;
 	private $password;
-	const URL_FORMAT = 'http://%s:%d/api/2/call?json=%s';
+	const URL_FORMAT = 'http://%s:%d/api/2/call?json=%s'; //http://51.254.164.6:40050/api/2/call?json=%s
 	private $timeout;
 
 	/**
