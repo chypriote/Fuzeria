@@ -1,3 +1,4 @@
 app/Config/database.php
 app/.idea
 app/tmp
+app/webroot/node_modules
