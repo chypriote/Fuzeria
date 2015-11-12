@@ -98,46 +98,43 @@
 
 
 	{% if use_store == 1 and use_donation_ladder == 1 and nb_donator > 0 %}
-	<!-- Donation Ladder -->
-	<div class="row">
-		<div class="col-md-12">
-			<div class="tag-box tag-box-v4">
-				<div id="testimonials-3" class="carousel slide testimonials testimonials-v1">
-					<div class="carousel-inner">
-						<div class="item active">
-							<div class="testimonial-info">
-								{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<span class="testimonial-author">
-									{{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}
-									<br>
-									<span class="text-muted">
-										<small>Meilleur donateur</small>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tag-box tag-box-v4">
+					<div id="testimonials-3" class="carousel slide testimonials testimonials-v1">
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="testimonial-info">
+									{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
+									<span class="testimonial-author">
+										{{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}
+										<br>
+										<span class="text-muted">
+											<small>Meilleur donateur</small>
+										</span>
 									</span>
-								</span>
+								</div>
 							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial-info">
-								{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<span class="testimonial-author">
-									{{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}
-									<br>
-									<span class="text-muted">
-										<small>Dernier donateur</small>
+							<div class="item">
+								<div class="testimonial-info">
+									{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
+									<span class="testimonial-author">
+										{{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}
+										<br>
+										<span class="text-muted">
+											<small>Dernier donateur</small>
+										</span>
 									</span>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- End Donation Ladder -->
 	{% endif %}
 	
 	{% if widgets is not empty %}
-		<!-- Custom Widgets -->
 		{% for widget in widgets %}
 			<div class="row">
 				<div class="col-md-12">
@@ -146,12 +143,10 @@
 					</div>
 				</div>
 			</div>
-		{% endfor %}	
-		<!-- End Custom Widgets -->
+		{% endfor %}
 	{% endif %}
 
 	{% if buttons is not empty %}
-		<!-- Custom Buttons -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="tag-box tag-box-v4">
@@ -166,7 +161,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Custom Buttons -->
 	{% endif %}
 </aside>
-<!-- End Sidebar -->

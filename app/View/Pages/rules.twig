@@ -1,6 +1,9 @@
 {% set title %}Réglement du serveur {{ name_server }}{% endset %}
 {% do _this.assign('title', title) %}
 <main class="col-md-9">
+	<header>
+		<h1>Reglement</h1>
+	</header>
   {% if rules is not empty %}
 		{{ rules }}
 	{% else %}
