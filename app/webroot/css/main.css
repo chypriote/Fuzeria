@@ -1,5 +1,12 @@
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
 #wrapper {
   background: #000;
+  min-height: 100%;
+  position: relative;
 }
 .boxed-layout {
   padding: 0;
@@ -12,6 +19,9 @@
 .avatar-rounded {
   border-radius: 3px;
   border: 1px solid #ffffff;
+}
+#content {
+  margin-top: 30px;
 }
 body {
   color: #fff;
@@ -98,6 +108,8 @@ nav .open > a {
   font-size: 12px;
   padding: 20px 0;
   background: #3e4753;
+  position: absolute;
+  bottom: 0;
 }
 .copyright p {
   color: #dadada;
@@ -111,6 +123,7 @@ nav .open > a {
   text-decoration: none;
 }
 .carousel {
+  margin-top: -30px;
   margin-bottom: 40px;
 }
 .carousel h3 {
@@ -316,9 +329,6 @@ nav .open > a {
   max-height: 150px;
   position: relative;
 }
-#add-support {
-  margin-top: 30px;
-}
 #add-support header {
   margin: 5px 0 10px;
   padding-bottom: 5px;
@@ -329,4 +339,64 @@ nav .open > a {
 }
 #add-support textarea {
   margin-top: 10px;
+}
+#view-support header {
+  margin: 5px 0 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+#view-support .timeline {
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+#view-support .timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 22%;
+  width: 4px;
+  content: '';
+  background: #f3f3f3;
+  margin-left: -14px;
+}
+#view-support .timeline > li {
+  position: relative;
+}
+#view-support .timeline > li time {
+  text-align: center;
+  padding: 0 30px 0 0;
+  font-weight: bold;
+}
+#view-support .timeline > li time .date {
+  font-size: 1.7em;
+  display: block;
+}
+#view-support .timeline > li time .time {
+  font-size: 1.3em;
+  color: #888888;
+}
+#view-support .timeline > li i.icon {
+  top: 22px;
+  left: 22%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: #72c02c;
+  margin: 0 0 0 -17px;
+  box-shadow: 0 0 0 4px #f3f3f3;
+  -webkit-font-smoothing: antialiased;
+}
+#view-support .timeline > li article {
+  padding: 10px 20px;
+  background: #f3f3f3;
+  border-radius: 5px;
+}
+#view-support .timeline > li article h2 {
+  border-bottom: 1px solid #ddd;
+}
+#view-support .timeline > li article.repondre {
+  padding-bottom: 10px;
+}
+#view-support .timeline > li article.repondre textarea {
+  margin-bottom: 10px;
 }

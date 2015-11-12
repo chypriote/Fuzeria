@@ -31,6 +31,10 @@ html, body {
 	border: 1px solid #ffffff;
 }
 
+#content {
+	margin-top: 30px;
+}
+
 //Override app.css 
 	body {
 		color: @txt-color;
@@ -121,6 +125,7 @@ html, body {
 
 //Carousel 
 	.carousel {
+		margin-top: -30px;
 		margin-bottom: 40px;
 		h3 {
 			margin: 0;
@@ -299,7 +304,6 @@ html, body {
 
 //Add support
 #add-support {
-	margin-top: 30px;
 	header {
 		margin: 5px 0 10px;
 		padding-bottom: 5px;
@@ -310,6 +314,68 @@ html, body {
 	}
 	textarea {
 		margin-top: 10px;
+	}
+}
+
+//View supports
+#view-support {
+	header {
+		margin: 5px 0 10px;
+		border-bottom: 1px solid @border-color;
+	}
+	.timeline {
+		padding: 0;
+		list-style: none;
+		position: relative;
+		&::before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 22%;
+			width: 4px;
+			content: '';
+			background: #f3f3f3;
+			margin-left: -14px;
+		}
+		& > li {
+			position: relative;
+			time {
+				text-align: center;
+				padding: 0 30px 0 0;
+				font-weight: bold;
+				.date {
+					font-size: 1.7em;
+					display: block;
+				}
+				.time {
+					font-size: 1.3em;
+					color: #888888;
+				}
+			}
+			i.icon {
+				top: 22px;
+				left: 22%;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				background-color: #72c02c;
+				margin: 0 0 0 -17px;
+				box-shadow: 0 0 0 4px #f3f3f3;
+				-webkit-font-smoothing: antialiased;
+			}
+			article {
+				padding: 10px 20px;
+				background: #f3f3f3;
+				border-radius: 5px;
+				h2 {
+					border-bottom: 1px solid #ddd;
+				}
+				&.repondre {
+					padding-bottom: 10px;
+					textarea {margin-bottom: 10px;}
+				}
+			}
+		}
 	}
 }
 
