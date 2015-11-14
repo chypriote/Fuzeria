@@ -7,7 +7,6 @@
 */
 
 /*Import Global Compulsory CSS Files*/
-@import url(app.css);
 @import url(plugins.css);
 @import url(ie8.css);
 
@@ -1320,37 +1319,6 @@ ul.labels-demo li {
     -webkit-transform: rotate(55deg);
 }
 
-/*Service Block v2
-------------------------------------*/
-.servive-block-v2 .servive-block-in {
-	padding: 20px 30px;
-	text-align: center;
-	margin-bottom: 15px;
-	background: rgba(255,255,255,0.2);
-}
-
-.servive-block-v2 .servive-block-in img {
-	width: 100%;
-	margin-bottom: 15px;
-}
-
-.servive-block-v2 .servive-block-in i {
-	font-size: 40px;
-}
-
-.servive-block-v2 .servive-block-in h4 {
-	line-height: 25px;
-}
-
-.servive-block-v2 .servive-block-in p {
-	margin-bottom: 20px;
-}
-
-.servive-block-v2 .servive-block-in i,
-.servive-block-v2 .servive-block-in h4,
-.servive-block-v2 .servive-block-in p {
-	color: #fff;
-}
 
 /*Easy Block
 ------------------------------------*/

@@ -19,27 +19,20 @@
 
 	echo $this->Html->css('style');
 	echo $this->Html->css('app');
-	echo $this->Html->css('404');
-	echo $this->Html->css('blog');
 	echo $this->Html->css('profile');
-	echo $this->Html->css('timeline');
-	echo $this->Html->css('summernote');
 
 	echo $this->Html->css('line-icons/line-icons');
 	echo $this->Html->css('flexslider/flexslider');
 	echo $this->Html->css('parallax-slider/parallax-slider');
-	echo $this->Html->css('sky-forms/custom-sky-forms');
 	echo $this->Html->css('dropzone');
 	echo $this->Html->css('plugins.css');
 	echo $this->Html->css('ie8.css');
 	echo $this->Html->css('plugins/animate.css');
 	echo $this->Html->css('plugins/box-shadows.css');
-
-	echo $this->Html->css('flatty');
+	echo $this->Html->css('plugins/flatty');
 
 	echo $this->Html->css('custom');
 
-  echo $this->Html->css('newstyle');
 	echo $this->Html->css('main');
 
 	?>
@@ -110,7 +103,6 @@
 			</nav>
 		</header>
 
-    <?php //TODO gérer le happy hour ?>
 		<?php if($happy_hour){ ?>
 			<div class="happy-hour">
 				<?php if($use_paypal){ ?>
@@ -126,11 +118,10 @@
 		<?php } ?>
 		
 		<?php echo $this->Session->flash(); ?>
-    <section id="content">
+    <section id="content" class="clearfix">
 		  <?php echo $this->fetch('content'); ?>
     </section>
-    <div class="clearfix"></div>
-		<footer class="copyright row">
+		<footer class="copyright row container">
 			<p class="text-center">
 				<?php
 				/*
@@ -161,10 +152,9 @@
       echo $this->Html->script('jquery.bootstrap-growl');
       echo $this->Html->script('index');
       echo $this->Html->script('jquery.autocomplete');
-      echo $this->Html->script('summernote');
-      echo $this->Html->script('summernote-fr-FR');
-      echo $this->Html->script('humane');
+      echo $this->Html->script('plugins/humane');
       echo $this->Html->script('custom');
+      echo $this->Html->script('main');
     ?>
 	<?php if(!empty($analytics) && $analytics){ ?>
 		<script>

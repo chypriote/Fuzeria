@@ -20,7 +20,7 @@
         <a href="{{ _this.Html.url({'controller': 'users', 'action': 'account', '?': {'tab': 'avatar'}}) }}">
         	{{ _this.Html.image(avatar, {'height': 32, 'width': 32, 'alt': 'Avatar', 'class': 'avatar-rounded', 'style': 'margin-top:-4px;'}) }}
         </a>
-        		{{ username }}ChypRiotE
+        		{{ username }}
       </header>
       <p>
       	{% if role > 0 %}
@@ -71,20 +71,16 @@
 	</section>
 
   <section id="widget-server" class="sidebar-widget col-sm-6 col-md-12">
-    {# if api.call('server.bukkit.version')[0]['result'] == 'success' #}
-    {% if use_store %}
+    {% if api.call('server.bukkit.version')[0]['result'] == 'success' %}
       <header class="server-on">
         <i class="fa fa-shield"></i> Serveur en ligne
         <span class="text-muted">
           <small>{{ api.call('server.bukkit.version')[0]['success'] }}</small>
         </span>
       </header>
-      {% set players = 8 %}
-      {% set max_players = 20 %}
+      {% set players = count_players %}
+      {% set max_players = api.call('players.online.limit')[0]['success'] %}
       {% set pourcent = players * 100 / max_players %}
-      {# set players = count_players #}
-      {# set max_players = api.call('players.online.limit')[0]['success'] #}
-      {# set pourcent = players * 100 / max_players #}
         <div class="progress progress-u progress-sm">
           <div class="progress-bar" role="progressbar" aria-valuenow="{{ players }}" aria-valuemin="0" aria-valuemax="{{ max_players }}" style="width:{{ pourcent }}%">
           </div>
@@ -102,46 +98,43 @@
 
 
 	{% if use_store == 1 and use_donation_ladder == 1 and nb_donator > 0 %}
-	<!-- Donation Ladder -->
-	<div class="row">
-		<div class="col-md-12">
-			<div class="tag-box tag-box-v4">
-				<div id="testimonials-3" class="carousel slide testimonials testimonials-v1">
-					<div class="carousel-inner">
-						<div class="item active">
-							<div class="testimonial-info">
-								{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<span class="testimonial-author">
-									{{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}
-									<br>
-									<span class="text-muted">
-										<small>Meilleur donateur</small>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="tag-box tag-box-v4">
+					<div id="testimonials-3" class="carousel slide testimonials testimonials-v1">
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="testimonial-info">
+									{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
+									<span class="testimonial-author">
+										{{ _this.Html.link(best_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': best_donator['User']['username']}) }}
+										<br>
+										<span class="text-muted">
+											<small>Meilleur donateur</small>
+										</span>
 									</span>
-								</span>
+								</div>
 							</div>
-						</div>
-						<div class="item">
-							<div class="testimonial-info">
-								{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
-								<span class="testimonial-author">
-									{{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}
-									<br>
-									<span class="text-muted">
-										<small>Dernier donateur</small>
+							<div class="item">
+								<div class="testimonial-info">
+									{{ _this.Html.image(best_donator['User']['avatar'], {'class': 'rounded-2x'}) }}
+									<span class="testimonial-author">
+										{{ _this.Html.link(last_donator['User']['username'], {'controller': 'users', 'action': 'profile', 'username': last_donator['User']['username']}) }}
+										<br>
+										<span class="text-muted">
+											<small>Dernier donateur</small>
+										</span>
 									</span>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- End Donation Ladder -->
 	{% endif %}
 	
 	{% if widgets is not empty %}
-		<!-- Custom Widgets -->
 		{% for widget in widgets %}
 			<div class="row">
 				<div class="col-md-12">
@@ -150,12 +143,10 @@
 					</div>
 				</div>
 			</div>
-		{% endfor %}	
-		<!-- End Custom Widgets -->
+		{% endfor %}
 	{% endif %}
 
 	{% if buttons is not empty %}
-		<!-- Custom Buttons -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="tag-box tag-box-v4">
@@ -170,7 +161,5 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Custom Buttons -->
 	{% endif %}
 </aside>
-<!-- End Sidebar -->
