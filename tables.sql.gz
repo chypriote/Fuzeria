@@ -1,24 +1,85 @@
-SET FOREIGN_KEY_CHECKS=0;
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 14, 2015 at 04:36 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
--- ----------------------------
--- Table structure for extaz_votes
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_votes`;
-CREATE TABLE IF NOT EXISTS `extaz_votes` (
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `extaz`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_buttons`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_buttons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `ip` text NOT NULL,
-  `reward` int(11) NOT NULL,
-  `next_vote` text NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `content` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `order` int(11) DEFAULT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_cpages
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_cpages`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_codes`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_codes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `creator` text NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `ip` text NOT NULL,
+  `code` text NOT NULL,
+  `value` int(11) DEFAULT NULL,
+  `used` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_comments`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `ip` text NOT NULL,
+  `comment` text NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_cpages`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_cpages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -31,93 +92,21 @@ CREATE TABLE IF NOT EXISTS `extaz_cpages` (
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
--- ----------------------------
--- Table structure for extaz_send_tokens_history
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_send_tokens_history`;
-CREATE TABLE IF NOT EXISTS `extaz_send_tokens_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shipper` text NOT NULL,
-  `recipient` text NOT NULL,
-  `nb_tokens` int(11) DEFAULT NULL,
-  `loss_rate` text NOT NULL,
-  `nb_tokens_with_loss_rate` int(11) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `updated` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+--
+-- Dumping data for table `extaz_cpages`
+--
 
--- ----------------------------
--- Table structure for extaz_shop_categories
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_shop_categories`;
-CREATE TABLE IF NOT EXISTS `extaz_shop_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
-  `created` date NOT NULL,
-  `updated` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+INSERT INTO `extaz_cpages` (`id`, `user_id`, `slug`, `sidebar`, `name`, `content`, `redirect`, `url`, `created`, `updated`) VALUES
+(1, 1, 'forum', 0, 'Forum', '', 1, 'http://localhost/extaz/forum.php', '2015-11-12 12:37:16', '2015-11-12 12:37:16');
 
--- ----------------------------
--- Records of extaz_shop_categories
--- ----------------------------
-INSERT INTO `extaz_shop_categories` VALUES ('0', 'Sans catégorie',  '2015-06-03', '2015-06-03');
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for extaz_buttons
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_buttons`;
-CREATE TABLE IF NOT EXISTS `extaz_buttons` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `content` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `icon` varchar(255) NOT NULL,
-  `color` varchar(255) NOT NULL,
-  `order` int(11) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `updated` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+--
+-- Table structure for table `extaz_donation_ladder`
+--
 
--- ----------------------------
--- Table structure for extaz_comments
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_comments`;
-CREATE TABLE IF NOT EXISTS `extaz_comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_id` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `ip` text NOT NULL,
-  `comment` text NOT NULL,
-  `created` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
-
--- ----------------------------
--- Table structure for extaz_codes
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_codes`;
-CREATE TABLE IF NOT EXISTS `extaz_codes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `creator` text NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `ip` text NOT NULL,
-  `code` text NOT NULL,
-  `value` int(11) DEFAULT NULL,
-  `used` int(11) DEFAULT NULL,
-  `created` datetime NOT NULL,
-  `updated` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
-
--- ----------------------------
--- Table structure for extaz_donation_ladder
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_donation_ladder`;
 CREATE TABLE IF NOT EXISTS `extaz_donation_ladder` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -125,12 +114,14 @@ CREATE TABLE IF NOT EXISTS `extaz_donation_ladder` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_informations
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_informations`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_informations`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_informations` (
   `id` int(11) NOT NULL DEFAULT '1',
   `debug` int(11) NOT NULL DEFAULT '0',
@@ -171,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
   `background` text,
   `chat_prefix` text,
   `chat_nb_messages` int(11) DEFAULT NULL,
-  `analytics` text DEFAULT NULL,
+  `analytics` text,
   `maintenance` int(11) DEFAULT NULL,
   `send_tokens_loss_rate` int(11) DEFAULT NULL,
   `votes_url` text,
@@ -184,15 +175,19 @@ CREATE TABLE IF NOT EXISTS `extaz_informations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Records of extaz_informations
--- ----------------------------
-INSERT INTO `extaz_informations` VALUES ('1', '0', 'Nom du serveur', '127.0.0.1', '12345', 'PO', '127.0.0.1', '0', '', '', '', 'tokens', '0', '0', '25', '3', '30', '', '', 'http://extaz-cms.com/assets/logo.png', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0', '1', '1', '0', '20', '', '3.jpg', 'Web', '20', '', '0', '0', 'http://www.rpg-paradize.com/', 'Votez pour notre serveur !', '180', '0', '', '15', '');
+--
+-- Dumping data for table `extaz_informations`
+--
 
--- ----------------------------
--- Table structure for extaz_instant_payment_notifications
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_instant_payment_notifications`;
+INSERT INTO `extaz_informations` (`id`, `debug`, `name_server`, `ip_server`, `port_server`, `money_server`, `jsonapi_ip`, `jsonapi_port`, `jsonapi_username`, `jsonapi_password`, `jsonapi_salt`, `site_money`, `starpass_idp`, `starpass_idd`, `starpass_tokens`, `paypal_price`, `paypal_tokens`, `paypal_email`, `contact_email`, `logo_url`, `use_store`, `use_paypal`, `use_economy`, `use_server_money`, `use_team`, `use_contact`, `use_rules`, `use_donation_ladder`, `use_slider`, `use_captcha`, `use_votes`, `use_votes_ladder`, `use_posts_views`, `happy_hour`, `happy_hour_bonus`, `rules`, `background`, `chat_prefix`, `chat_nb_messages`, `analytics`, `maintenance`, `send_tokens_loss_rate`, `votes_url`, `votes_description`, `votes_time`, `votes_reward`, `votes_command`, `votes_ladder_limit`, `customs_buttons_title`) VALUES
+(1, 0, '', '', NULL, 'PO', '', NULL, '', '', '', 'tokens', 0, 0, 25, 3, 30, '', '', 'http://extaz-cms.com/assets/logo.png', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 20, '', '3.jpg', 'Web', 20, '', 0, 0, 'http://www.rpg-paradize.com/', 'Votez pour notre serveur !', 180, 0, '', 15, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_instant_payment_notifications`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_instant_payment_notifications` (
   `id` char(36) NOT NULL,
   `notify_version` varchar(64) DEFAULT NULL COMMENT 'IPN Version Number',
@@ -285,10 +280,12 @@ CREATE TABLE IF NOT EXISTS `extaz_instant_payment_notifications` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Table structure for extaz_likes
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_likes`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_likes`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_likes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_article` int(11) DEFAULT '0',
@@ -296,12 +293,14 @@ CREATE TABLE IF NOT EXISTS `extaz_likes` (
   `username` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
--- ----------------------------
--- Table structure for extaz_paypal_items
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_paypal_items`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_paypal_items`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_paypal_items` (
   `id` varchar(36) NOT NULL,
   `instant_payment_notification_id` varchar(36) NOT NULL,
@@ -317,10 +316,12 @@ CREATE TABLE IF NOT EXISTS `extaz_paypal_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Table structure for extaz_posts
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_posts`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_posts`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cat` varchar(255) DEFAULT NULL,
@@ -339,34 +340,58 @@ CREATE TABLE IF NOT EXISTS `extaz_posts` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
--- ----------------------------
--- Records of extaz_posts
--- ----------------------------
-INSERT INTO `extaz_posts` VALUES ('1', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
-INSERT INTO `extaz_posts` VALUES ('2', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
-INSERT INTO `extaz_posts` VALUES ('3', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
-INSERT INTO `extaz_posts` VALUES ('4', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
-INSERT INTO `extaz_posts` VALUES ('5', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
-INSERT INTO `extaz_posts` VALUES ('6', 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', '0', '0', '0', '1', '0', '0', '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
+--
+-- Dumping data for table `extaz_posts`
+--
 
--- ----------------------------
--- Table structure for extaz_posts_views
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_posts_views`;
+INSERT INTO `extaz_posts` (`id`, `cat`, `title`, `slug`, `content`, `img`, `author`, `likes`, `ip`, `progress`, `visible`, `draft`, `corrected`, `posted`, `created`, `updated`) VALUES
+(1, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42'),
+(2, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42'),
+(3, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42'),
+(4, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42'),
+(5, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42'),
+(6, 'Ipsum', 'Lorem', 'slug-slug-slug', '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n', 'http://i.imgur.com/Kec0o8z.jpg', 'MrSaooty', 0, '0', 0, 1, 0, 0, '2014-12-05 20:19:42', '2014-12-05 20:19:42', '2014-12-05 20:19:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_posts_views`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_posts_views` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) NOT NULL,
   `ip` text NOT NULL,
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
--- ----------------------------
--- Table structure for extaz_shop
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_shop`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_send_tokens_history`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_send_tokens_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `shipper` text NOT NULL,
+  `recipient` text NOT NULL,
+  `nb_tokens` int(11) DEFAULT NULL,
+  `loss_rate` text NOT NULL,
+  `nb_tokens_with_loss_rate` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_shop`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_shop` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
@@ -383,12 +408,35 @@ CREATE TABLE IF NOT EXISTS `extaz_shop` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_shop_history
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_shop_history`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_shop_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_shop_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `created` date NOT NULL,
+  `updated` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `extaz_shop_categories`
+--
+
+INSERT INTO `extaz_shop_categories` (`id`, `name`, `created`, `updated`) VALUES
+(0, 'Sans catégorie', '2015-06-03', '2015-06-03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_shop_history`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_shop_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -400,12 +448,14 @@ CREATE TABLE IF NOT EXISTS `extaz_shop_history` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_starpass_history
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_starpass_history`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_starpass_history`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_starpass_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -415,28 +465,32 @@ CREATE TABLE IF NOT EXISTS `extaz_starpass_history` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_support
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_support`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_support`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_support` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
-  `type` text DEFAULT NULL,
+  `type` text,
   `priority` int(11) DEFAULT NULL,
   `message` longtext,
   `resolved` int(11) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
--- ----------------------------
--- Table structure for extaz_support_comments
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_support_comments`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_support_comments`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_support_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ticket_id` int(11) DEFAULT NULL,
@@ -445,34 +499,38 @@ CREATE TABLE IF NOT EXISTS `extaz_support_comments` (
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
--- ----------------------------
--- Table structure for extaz_team
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_team`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_team`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_team` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT '',
   `rank` text,
   `color` text,
-  `order` int(11),
+  `order` int(11) DEFAULT NULL,
   `facebook_url` text,
   `twitter_url` text,
   `youtube_url` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Table structure for extaz_users
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_users`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_users`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(50) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `avatar` text DEFAULT NULL,
+  `avatar` text,
   `tokens` int(11) DEFAULT NULL,
   `role` int(11) DEFAULT NULL,
   `allow_email` int(11) DEFAULT NULL,
@@ -480,12 +538,38 @@ CREATE TABLE IF NOT EXISTS `extaz_users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
--- ----------------------------
--- Table structure for extaz_widgets
--- ----------------------------
-DROP TABLE IF EXISTS `extaz_widgets`;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_votes`
+--
+
+CREATE TABLE IF NOT EXISTS `extaz_votes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `ip` text NOT NULL,
+  `reward` int(11) NOT NULL,
+  `next_vote` text NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `extaz_votes`
+--
+
+INSERT INTO `extaz_votes` (`id`, `user_id`, `ip`, `reward`, `next_vote`, `created`, `updated`) VALUES
+(1, 2, '127.0.0.1', 0, '1447370397', '2015-11-12 21:19:57', '2015-11-12 21:19:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `extaz_widgets`
+--
+
 CREATE TABLE IF NOT EXISTS `extaz_widgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -497,4 +581,8 @@ CREATE TABLE IF NOT EXISTS `extaz_widgets` (
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
