@@ -20,6 +20,7 @@ Basé sur [ExtazCMS](https://github.com/MrSaooty/ExtazCMS) v1.8 par MrSaooty
    *  Equipe du site configurable en back-office
    *  Page de contact des admins
 *  Page de connexion/deconnexion/inscription unique
+
 ---
 #### Installation
 Le site utilise [CakePHP](http://cakephp.org/) et nécessite donc un environnement Apache pour fonctionner (LAMP, wamp). L'environnement NodeJS a été utilisé pendant le développement, il est donc recommandé de s'en servir pour les évolutions du site.  
